@@ -16,6 +16,10 @@ function AddQuestionPopup({
   const handleClose = () => setShow(false);
 
   const handleSubmit = () => {
+    if (!question || !answer) {
+      alert("Please fill both values");
+      return;
+    }
     const temp = Array.from(questionsList);
     temp.push({
       id: temp.length ? `${temp[temp.length - 1].id + 1}` : "1",
