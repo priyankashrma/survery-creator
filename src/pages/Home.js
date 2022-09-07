@@ -139,7 +139,7 @@ const Home = ({ data }) => {
       <Button className="btn btn-light m-3 mb-5" onClick={() => setShow(true)}>
         Add New Question
       </Button>
-      {questionsList && (
+      {questionsList && questionsList.length > 5 && (
         <Pagination
           questionsList={questionsList}
           setCurrentPage={setCurrentPage}
@@ -152,6 +152,8 @@ const Home = ({ data }) => {
         show={show}
         setShow={(a) => setShow(a)}
         questionsList={questionsList}
+        questionsPerPage={questionsPerPage}
+        setCurrentPage={setCurrentPage}
         setQuestionsList={setQuestionsList}
         setCurrentQuestions={setCurrentQuestions}
         updateCurrentQuestions={updateCurrentQuestions}

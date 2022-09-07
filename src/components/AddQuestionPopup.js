@@ -5,7 +5,9 @@ function AddQuestionPopup({
   show,
   setShow,
   questionsList,
+  questionsPerPage,
   setQuestionsList,
+  setCurrentPage,
   updateCurrentQuestions,
 }) {
   const [question, setQuestion] = useState("");
@@ -22,6 +24,7 @@ function AddQuestionPopup({
     });
     setQuestionsList(temp);
     updateCurrentQuestions();
+    setCurrentPage(Math.floor(questionsList.length / questionsPerPage) + 1);
     handleClose();
   };
 
